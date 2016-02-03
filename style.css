@@ -1,5 +1,5 @@
 /*
-Theme Name:     CTheory
+Theme Name:     CTheory Wordpress Theme, 0.2
 Description:    child theme of Twenty Eleven 
 Author:         Julian Evans
 Template:       twentyeleven
@@ -97,7 +97,7 @@ div.entry-content h1, .singular h1.entry-title, #author-header, #search-header {
 	font-size: 1.1em;
 	color: white;
 	font-weight: bold;
-	background: transparent url("section-head.gif") no-repeat scroll 0px 2px / 100% 89%;
+	background: transparent url("images/section-head.gif") no-repeat scroll 0px 2px / 100% 89%;
 	text-indent: 3%;
 	margin-bottom: 10px;
 }
@@ -334,7 +334,7 @@ body {
 }
 
 #main {
-	background: url('page-bg.jpg') no-repeat top;
+	background: url('images/page-bg.jpg') no-repeat top;
 	z-index: 10;
 	height: 89px;
 	margin-top: 0;
@@ -359,7 +359,7 @@ body {
 }
 
 #site-title {
-	background: url('header.jpg') no-repeat;
+	background: url('images/header.jpg') no-repeat;
 	text-indent: -9999px;
 	display: block;
 	width: 700px;
@@ -505,6 +505,6 @@ aside li {
  
  @media screen and (max-width:500px) {
 	 	
-	 	#site-title { background: transparent url("banner-small.jpg") no-repeat scroll 0% 0%; }
+	 	#site-title { background: transparent url("images/banner-small.jpg") no-repeat scroll 0% 0%; }
 	 
  }
