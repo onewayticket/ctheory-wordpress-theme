@@ -16,8 +16,11 @@ get_header(); ?>
 
 		<div id="primary">
 			<div id="content" role="main">
-			<?php 
-				//This excludes categories by ID from the homepage. New categories are displayed by default and can be sorted by the Taxonomy Order plugin
+			<?php
+				
+				 
+				// This excludes categories by ID from the homepage. 
+				// New categories are displayed by default and can be sorted by the Taxonomy Order plugin
 				$args = array(
 						'exclude'  => '3,8,9,4,11,12,14,13,15');
 					
@@ -26,13 +29,29 @@ get_header(); ?>
 				
 				foreach ($categories as $cat) {
 				echo "<h1 id=\"category-header\">" . $cat->name . "</h1>";
-				query_posts('meta_key=Filename&orderby=meta_value&order=DESC&posts_per_page=-1&category_name='.$cat->name);
-				get_template_part('content', 'home');
-				}
 				
-								
-							
-				 ?>	
+				$args = array(
+					'meta_key' 			=> 'Filename',	
+					'orderby'  			=> 'meta_value',
+					'order'   			=> 'DESC',
+					'posts_per_page'	=> '-1',
+					'category_name'		=> $cat->name
+				); 
+				
+				$the_query = new WP_Query( $args );
+				
+				while ( $the_query->have_posts() ) : $the_query->the_post(); 
+				
+				get_template_part('content', 'home');
+
+				endwhile; 
+				
+				wp_reset_postdata();
+				
+				// close foreach
+				}
+			
+				?>	
 
 			</div><!-- #content -->
 		</div><!-- #primary -->
