@@ -11,26 +11,20 @@ get_header(); ?>
 		<div id="primary">
 			<div id="content" role="main">
 
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php 	while ( have_posts() ) : the_post(); 
+				  	
+				  	get_template_part( 'content', 'page' ); 
+				  	
 
-					<?php get_template_part( 'content', 'page' ); ?>
-
-					<?php comments_template( '', true ); ?>
-
-				<?php endwhile; // end of the loop. ?>
-	 
-			<?php
-			
-			
-			//in functions.php
-			
-			ctheory_list_authors();
-			
-			?>
-			
-				
-
-									
+					
+				  	endwhile; // end of the loop. ?>
+	 	
+				  				
+				  	<div id="author-list">
+			<?php	//in functions.php
+					ctheory_list_authors(); ?>
+				  	</div>
+	 	
 			</div><!-- #content -->
 		</div><!-- #primary -->
 

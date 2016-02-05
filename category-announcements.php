@@ -16,11 +16,27 @@ get_header(); ?>
 
 				$ctheory_category = 'Announcements';
 				
-				query_posts('order=DESC&posts_per_page=-1&category_name='.$ctheory_category);
+				//query_posts('order=DESC&posts_per_page=-1&category_name='.$ctheory_category);
 				
 				echo "<h1 id=\"category-header\">" . $ctheory_category . "</h1>";
 
-				get_template_part('ctheory', 'announcements');	
+				$args = array(
+					'order'   			=> 'DESC',
+					'posts_per_page'	=> '-1',
+					'category_name'		=> $ctheory_category
+				); 
+				
+				$the_query = new WP_Query( $args );
+				
+				while ( $the_query->have_posts() ) : $the_query->the_post(); 
+				
+				get_template_part('content', 'announcements');
+
+				endwhile; 
+				
+				wp_reset_postdata();
+
+				//get_template_part('ctheory', 'announcements');	
 				
 				// end
 				
