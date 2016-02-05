@@ -1,3 +1,4 @@
 # ctheory-wordpress-theme
 Wordpress theme for CTheory journal
-(CTheory site)[www.ctheory.net]
+
+[CTheory site](www.ctheory.net)
